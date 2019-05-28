@@ -1,36 +1,16 @@
 #include <iostream>
+#include <string>
+#include "sanpham.h"
+#include "khachhang.h"
+#include "nhanvien.h"
 using namespace std;
-const int SIZE=10;
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-class safearay
+int main()
 {
-private:
-	int arr[SIZE];
-public:
-		safearay()
-		{
-			/*register nham goi y rang bien nay co tan suat su dung rat cao, 
-			hay su dung register(thanh ghi) de thao tac bien nay. Muc dich la toc do vi thao tac tren register(thanh ghi) nhanh hon*/
-			register int i;
-			for(int i;i<SIZE;i++)
-			{
-				arr[i]=i;
-			}
-		}
-		//qua tai mang
-		int &operator[](int i)
-		{
-			if(i>SIZE){
-				cout<<"Index out of bounds"<<endl;
-				return arr[0];
-			}
-			return arr[i];
-		}
-		
-};
-int main(int argc, char** argv) {
-	safearay A;
-	cout<<"Value of A[2] : " <<A[2]<<endl;
-	cout<<"Value of A[12] : " <<A[12]<<endl;
+	khachhang a("duke",2000,"bacninh","0976915023","123456789");
+	khachhang b("due",1000,"bacninh","0976915023","123456759");
+	nhanvien c("dua",2000,"bacninh","0976915023","1234567299");
+	a.print();
+	b.print();
+	c.print();
 	return 0;
 }
